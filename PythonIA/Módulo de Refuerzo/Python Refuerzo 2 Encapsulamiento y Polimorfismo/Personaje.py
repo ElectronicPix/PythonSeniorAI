@@ -11,8 +11,8 @@ class Personaje:
 
 
     #métodos especiales    
-    def __new__(): #Se ejecuta por debajo, antes que se invoque el init
-        pass
+#    def __new__(): #Se ejecuta por debajo, antes que se invoque el init
+#        pass
      
 guerrero1 = Personaje(100, 10, 5)
 #Procedimiento. Python invoca primero a new y luego pasa el objeto vacio a __init__
@@ -37,7 +37,7 @@ def funcion_estatica():
 def mi_metodo(self, nombre):
     print(f"Hola,{nombre}")
 
-mi_metodo()
+#mi_metodo()
 
 
 
@@ -71,3 +71,99 @@ mi_metodo()
     (la madre de todas las clases en Python).
     
 """
+
+#Encapsulamiento
+
+class Persona:
+    atributo_publico = "Mostrar" #Accesible desde el exterior
+    __atributo_privado = "Oculto" #No accesible
+    
+    #No accesible desde el esxterior
+    def __metodo_oculto(self):
+        print("Este método está ocuto")
+        self.__variable = 0
+    
+    
+    #Accesible desde el exterior    
+    def metodo_normal(self):
+        #  El método si es accesible desde el interior
+        self.__metodo_oculto()
+        
+alumno = Persona   
+# alumno.__metodo_oculto() # Esre método no es accesible desde el exterior
+alumno.metodo_normal() # Este método es accesible
+
+
+#Acceder mediante la clase
+alumno.__Persona__metodo_ooculto()
+print(alumno.__Persona__atributo_privado)
+
+
+
+#Ejemplo 2
+
+class Ejemplo:
+    def publico(self):
+        print("Este método es público")
+        
+    def __privado(self):
+        print("Este método es privado")
+        
+ejemplo = Ejemplo()
+ejemplo.publico()
+ejemplo.__privado() # Error: 'Ejemplo' object has no attribute '__privado'
+
+
+# Evidentemente existe ese método, pero no lo podemos ver por que es privado
+
+ejemplo._Ejemplo__privado() # Traampa para acceder a un método privado
+
+
+
+# Polimorfismo
+
+palabra = "polimorfismo"
+lista = ["Clases", "POO", "Polimorfismo"]
+tupla = (1, 2, 3, 80)
+
+"""for i in palabra, lista, tupla:
+    
+    length = len(i)
+    print(length)"""
+    
+class Mago():
+    def atacar(self):
+        print("Ataque mágico")
+
+class Arquero():
+    def atacar(self):
+        print("Lanzamiento de flecha")
+
+class Samurai():
+    def atacar(self):
+        print("Ataque con katana")
+        
+mago1 = Mago()
+arquero1 = Arquero()
+samurai1 = Samurai()
+
+lista = [arquero1, mago1, samurai1]
+
+"""for i in lista:
+    i.atacar()"""
+    
+class Mago():
+    def defender(self):
+        print("Escudo mágico")
+
+class Arquero():
+    def defender(self):
+        print("Esconderse")
+
+class Samurai():
+    def defender(self):
+        print("Bloqueo")
+
+def personaje_defender(objeto):
+    
+    return objeto.defender()

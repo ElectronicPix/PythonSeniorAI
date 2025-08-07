@@ -2,7 +2,7 @@
 
 #Programación Orientada a Objetos
 
-![Python POO](image.png){ width=150px height=150px }
+![Python POO](image.png) { width=150px height=150px }
 
 # Abstracción
 
@@ -27,15 +27,22 @@ Si luego creas una nueva clase llamada "Perro", en lugar de empezar desde cero, 
 
 # Encapsulamiento
 
+Se refiere a impedir el acceso a determinados métodos y atributos de os objetos estableciendo así que puede utilizarce desde fuera de la clase.
+
+- No existen los modificadores de acceso
 
 # Polimorfismo
 - Multiples formas 
 
+Hbabilidad de objetos de distintas clases de responder al mismo mensaje.
 
+Se consigue a travez de la herencia.
 
-
+En ocaciones se usa ell termino para referirse a la sobrecarga de métodos.
 
 Link pizarra https://zoom.us/wb/doc/oemouhrbQLqWYbfK4ojkOg/p/160916515913728
 
+
+notion: https://www.notion.so/POO-196bd0f68c8580dabd6be910aac488b5
 
 DevSeniorCode
