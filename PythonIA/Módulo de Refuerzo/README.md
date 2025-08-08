@@ -2,7 +2,7 @@
 
 #Programación Orientada a Objetos
 
-![Python POO](image.png) { width=150px height=150px }
+![Python POO](image.png){ width=150px height=150px }
 
 # Abstracción
 
@@ -39,6 +39,10 @@ Hbabilidad de objetos de distintas clases de responder al mismo mensaje.
 Se consigue a travez de la herencia.
 
 En ocaciones se usa ell termino para referirse a la sobrecarga de métodos.
+
+
+![Python POO](PythonPOO.PNG){ width=150px height=150px }
+
 
 Link pizarra https://zoom.us/wb/doc/oemouhrbQLqWYbfK4ojkOg/p/160916515913728
 
