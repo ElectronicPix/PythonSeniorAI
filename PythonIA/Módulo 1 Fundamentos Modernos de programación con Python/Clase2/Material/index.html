@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Senior con IA - Módulo 1 - Clase 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .hero {
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+            background: url('img/bienvenida.png') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(48, 19, 191, 0.60);
+            /* Capa de color para contraste */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content .cohorte {
+            display: inline-block;
+            background: #ff2fa0;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            border-radius: 20px;
+            padding: 0.5em 1.5em;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-content .web {
+            display: block;
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            color: #fff;
+            text-decoration: underline;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 700px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content .cohorte {
+                font-size: 1.2rem;
+                padding: 0.4em 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header fijo con logo y menú -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="img/devsenior-logo.jpeg" alt="Dev Senior Logo" class="logo-img">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#intro" class="nav-link active"><i class="fa-solid fa-house"></i> Introducción</a></li>
+                    <li><a href="#tipos" class="nav-link"><i class="fa-solid fa-database"></i> Tipos de datos</a></li>
+                    <li><a href="#io" class="nav-link"><i class="fa-solid fa-keyboard"></i> Entrada/Salida</a></li>
+                    <li><a href="#operadores" class="nav-link"><i class="fa-solid fa-calculator"></i> Operadores</a>
+                    </li>
+                    <li><a href="#ejercicios-casa" class="nav-link nav-ej-casa"><i
+                                class="fa-solid fa-house-chimney"></i> Ejercicios Casa</a></li>
+                    <li><a href="#ejercicios-clase" class="nav-link nav-ej-clase"><i
+                                class="fa-solid fa-chalkboard-user"></i> Ejercicios Clase</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <!-- Secciones con IDs para navegación -->
+        <section class="section intro-section" id="intro">
+            <div class="section-card">
+                <h1 class="main-title"><span class="python-accent">Python</span> Senior con <span
+                        class="ia-accent">IA</span> <span class="badge">Módulo 1 - Clase 1</span></h1>
+                <div class="intro-flex">
+                    <div class="intro-img">
+                        <img src="img/python-logo.png" alt="Logo de Python">
+                    </div>
+                    <div class="intro-text">
+                        <h2>¿Qué es Python?</h2>
+                        <p>Python es un lenguaje de programación de alto nivel, interpretado y de propósito general. Es
+                            conocido por su sintaxis sencilla y legible, lo que lo hace ideal tanto para principiantes
+                            como para profesionales. Python se utiliza en desarrollo web, análisis de datos,
+                            inteligencia artificial, automatización, ciencia, y mucho más.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section tipos-section" id="tipos">
+            <div class="section-card">
+                <div class="data-types-header">
+                    <img src="img/tipos-datos.jpg" alt="Tipos de datos en Python">
+                    <h2><i class="fa-solid fa-database"></i> Tipos de datos en Python</h2>
+                </div>
+                <div class="data-type-list">
+                    <!-- Números -->
+                    <div class="data-type-card">
+                        <h3>Números <span class="type-label">(int, float, complex)</span></h3>
+                        <p>Los números en Python pueden ser enteros (<b>int</b>), decimales (<b>float</b>) o complejos
+                            (<b>complex</b>).</p>
+                        <button class="toggle-btn">Ver ejemplo</button>
+                        <pre class="code-example"><code># int
+edad = 30
+# float
+temperatura = 36.6
+# complex
+numero_complejo = 2 + 3j</code></pre>
+                    </div>
+                    <!-- Cadenas -->
+                    <div class="data-type-card">
+                        <h3>Cadenas de texto <span class="type-label">(str)</span></h3>
+                        <p>Las cadenas son secuencias de caracteres. Se usan para almacenar texto.</p>
+                        <button class="toggle-btn">Ver ejemplo</button>
+                        <pre class="code-example"><code>nombre = "Juan"
+mensaje = 'Hola, mundo'
+print(nombre.upper())  # JUAN</code></pre>
+                    </div>
+                    <!-- Booleanos -->
+                    <div class="data-type-card">
+                        <h3>Booleanos <span class="type-label">(bool)</span></h3>
+                        <p>Solo pueden tener dos valores: <b>True</b> o <b>False</b>. Se usan para lógica y condiciones.
+                        </p>
+                        <button class="toggle-btn">Ver ejemplo</button>
+                        <pre class="code-example"><code>es_mayor = True
+es_menor = False
+print(5 > 3)  # True</code></pre>
+                    </div>
+                    <!-- Listas -->
+                    <div class="data-type-card">
+                        <h3>Listas <span class="type-label">(list)</span></h3>
+                        <p>Colecciones ordenadas y mutables de elementos.</p>
+                        <button class="toggle-btn">Ver ejemplo</button>
+                        <pre class="code-example"><code>frutas = ["manzana", "banana", "cereza"]
+frutas.append("naranja")
+print(frutas[0])  # manzana</code></pre>
+                    </div>
+                    <!-- Tuplas -->
+                    <div class="data-type-card">
+                        <h3>Tuplas <span class="type-label">(tuple)</span></h3>
+                        <p>Colecciones ordenadas e inmutables.</p>
+                        <button class="toggle-btn">Ver ejemplo</button>
+                        <pre class="code-example"><code>coordenadas = (10, 20)
+print(coordenadas[1])  # 20</code></pre>
+                    </div>
+                    <!-- Diccionarios -->
+                    <div class="data-type-card">
+                        <h3>Diccionarios <span class="type-label">(dict)</span></h3>
+                        <p>Colecciones no ordenadas de pares clave-valor.</p>
+                        <button class="toggle-btn">Ver ejemplo</button>
+                        <pre class="code-example"><code>persona = {"nombre": "Ana", "edad": 25}
+print(persona["nombre"])  # Ana</code></pre>
+                    </div>
+                    <!-- Conjuntos -->
+                    <div class="data-type-card">
+                        <h3>Conjuntos <span class="type-label">(set)</span></h3>
+                        <p>Colecciones no ordenadas de elementos únicos.</p>
+                        <button class="toggle-btn">Ver ejemplo</button>
+                        <pre class="code-example"><code>numeros = {1, 2, 3, 2}
+print(numeros)  # {1, 2, 3}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section io-section" id="io">
+            <div class="section-card dark-card">
+                <h2>🧑‍🏫 Entrada y salida de datos en Python – Guía completa para principiantes</h2>
+                <div class="io-block">
+                    <h3>🟣 ¿Qué es la salida de datos?</h3>
+                    <p>La salida de datos en Python es la forma en que el programa muestra información al usuario,
+                        comúnmente a través de la consola.</p>
+                    <ul>
+                        <li><b>✅ Función básica: print()</b></li>
+                    </ul>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>print("Hola, mundo")</code></pre>
+                    <p>📌 <b>Explicación:</b></p>
+                    <ul>
+                        <li><b>print()</b> es una función incorporada (built-in).</li>
+                        <li>Lo que escribas entre comillas se muestra en pantalla.</li>
+                    </ul>
+                    <h4>🟣 Formas comunes de usar print()</h4>
+                    <ol>
+                        <li>Imprimir texto
+                            <button class="toggle-btn">Ver ejemplo</button>
+                            <pre class="code-example"><code>print("Bienvenido a Dev Senior Code")</code></pre>
+                        </li>
+                        <li>Imprimir variables
+                            <button class="toggle-btn">Ver ejemplo</button>
+                            <pre class="code-example"><code>nombre = "Laura"
+print(nombre)</code></pre>
+                        </li>
+                        <li>Imprimir texto + variables
+                            <button class="toggle-btn">Ver ejemplo</button>
+                            <pre class="code-example"><code>edad = 25
+print("Tu edad es:", edad)</code></pre>
+                        </li>
+                        <li>Concatenación con +
+                            <button class="toggle-btn">Ver ejemplo</button>
+                            <pre class="code-example"><code>nombre = "Johan"
+print("Hola " + nombre)</code></pre>
+                            <p>🟡 <b>Ojo:</b> solo se puede concatenar texto con texto (str). Si tienes números, usa
+                                <b>str()</b>:
+                            </p>
+                            <button class="toggle-btn">Ver ejemplo</button>
+                            <pre class="code-example"><code>print("Tienes " + str(25) + " años")</code></pre>
+                        </li>
+                        <li>Uso de f-strings (recomendado desde Python 3.6+)
+                            <button class="toggle-btn">Ver ejemplo</button>
+                            <pre class="code-example"><code>nombre = "Melissa"
+edad = 19
+print(f"Hola, {nombre}. Tienes {edad} años.")</code></pre>
+                            <p>✔️ <b>Ventajas del f-string:</b> Más limpio, más moderno. Permite incluir expresiones:
+                            </p>
+                            <button class="toggle-btn">Ver ejemplo</button>
+                            <pre
+                                class="code-example"><code>print(f"El próximo año tendrás {edad + 1} años")</code></pre>
+                        </li>
+                    </ol>
+                    <h4>🟣 Salto de línea y separador</h4>
+                    <ul>
+                        <li><code>\n</code> = salto de línea</li>
+                    </ul>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>print("Hola\nDev Senior")</code></pre>
+                    <ul>
+                        <li><b>sep</b> y <b>end</b> en print()</li>
+                    </ul>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>print("Hola", "mundo", sep=" - ")  # Hola - mundo
+print("Hola", end=" ")
+print("Dev Senior")  # Hola Dev Senior</code></pre>
+                </div>
+                <div class="io-block">
+                    <h3>🟣 ¿Qué es la entrada de datos?</h3>
+                    <p>La entrada de datos permite que el usuario escriba información mientras el programa se ejecuta.
+                        Se utiliza la función <b>input()</b>.</p>
+                    <ul>
+                        <li>✅ <b>Ejemplo básico:</b></li>
+                    </ul>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>nombre = input("¿Cuál es tu nombre? ")
+print("Hola", nombre)</code></pre>
+                    <p>📌 <b>Importante:</b> <br>input() siempre devuelve un texto (str), aunque escribas un número.</p>
+                    <p>Si necesitas usarlo como número, conviértelo:</p>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>edad = int(input("¿Qué edad tienes? "))
+print(f"El año próximo tendrás {edad + 1} años")</code></pre>
+                </div>
+            </div>
+        </section>
+        <section class="section operadores-section" id="operadores">
+            <div class="section-card">
+                <h2>Operadores en Python – Explicado paso a paso</h2>
+                <div class="operators-block">
+                    <h3>🟣 ¿Qué es un operador?</h3>
+                    <p>Un operador es un símbolo que permite realizar operaciones sobre valores o variables. Python
+                        incluye varios tipos para realizar cálculos, comparaciones y lógica condicional.</p>
+
+                    <h4>1️⃣ Operadores Aritméticos</h4>
+                    <p>Se usan para realizar operaciones matemáticas básicas.</p>
+                    <div class="table-responsive">
+                        <table class="operators-table">
+                            <thead>
+                                <tr>
+                                    <th>Operador</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplo</th>
+                                    <th>Resultado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>+</td>
+                                    <td>Suma</td>
+                                    <td>3 + 2</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Resta</td>
+                                    <td>5 - 1</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>*</td>
+                                    <td>Multiplicación</td>
+                                    <td>2 * 3</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>/</td>
+                                    <td>División real</td>
+                                    <td>6 / 2</td>
+                                    <td>3.0</td>
+                                </tr>
+                                <tr>
+                                    <td>//</td>
+                                    <td>División entera</td>
+                                    <td>7 // 2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>%</td>
+                                    <td>Módulo (residuo)</td>
+                                    <td>7 % 2</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>**</td>
+                                    <td>Potencia</td>
+                                    <td>2 ** 3</td>
+                                    <td>8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>a = 10
+b = 3
+
+print("Suma:", a + b)
+print("Resta:", a - b)
+print("Multiplicación:", a * b)
+print("División real:", a / b)
+print("División entera:", a // b)
+print("Módulo:", a % b)
+print("Potencia:", a ** b)</code></pre>
+
+                    <h4>2️⃣ Operadores de Comparación (Relacionales)</h4>
+                    <p>Se usan para comparar valores. Devuelven <b>True</b> o <b>False</b>.</p>
+                    <div class="table-responsive">
+                        <table class="operators-table">
+                            <thead>
+                                <tr>
+                                    <th>Operador</th>
+                                    <th>Significado</th>
+                                    <th>Ejemplo</th>
+                                    <th>Resultado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>==</td>
+                                    <td>Igual a</td>
+                                    <td>5 == 5</td>
+                                    <td>True</td>
+                                </tr>
+                                <tr>
+                                    <td>!=</td>
+                                    <td>Distinto de</td>
+                                    <td>5 != 3</td>
+                                    <td>True</td>
+                                </tr>
+                                <tr>
+                                    <td>></td>
+                                    <td>Mayor que</td>
+                                    <td>7 > 4</td>
+                                    <td>True</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        << /td>
+                                    <td>Menor que</td>
+                                    <td>3 < 2</td>
+                                    <td>False</td>
+                                </tr>
+                                <tr>
+                                    <td>>=</td>
+                                    <td>Mayor o igual que</td>
+                                    <td>5 >= 5</td>
+                                    <td>True</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <=< /td>
+                                    <td>Menor o igual que</td>
+                                    <td>4 <= 3</td>
+                                    <td>False</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>edad = 18
+print(edad == 18)   # True
+print(edad != 21)   # True
+print(edad >= 18)   # True</code></pre>
+
+                    <h4>3️⃣ Operadores de Asignación</h4>
+                    <p>Se usan para asignar valores a variables.</p>
+                    <div class="table-responsive">
+                        <table class="operators-table">
+                            <thead>
+                                <tr>
+                                    <th>Operador</th>
+                                    <th>Equivalente</th>
+                                    <th>Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>=</td>
+                                    <td>Asignación directa</td>
+                                    <td>x = 10</td>
+                                </tr>
+                                <tr>
+                                    <td>+=</td>
+                                    <td>Suma y asigna</td>
+                                    <td>x += 3 → x = x + 3</td>
+                                </tr>
+                                <tr>
+                                    <td>-=</td>
+                                    <td>Resta y asigna</td>
+                                    <td>x -= 1</td>
+                                </tr>
+                                <tr>
+                                    <td>*=</td>
+                                    <td>Multiplica y asigna</td>
+                                    <td>x *= 2</td>
+                                </tr>
+                                <tr>
+                                    <td>/=</td>
+                                    <td>Divide y asigna</td>
+                                    <td>x /= 2</td>
+                                </tr>
+                                <tr>
+                                    <td>//=</td>
+                                    <td>División entera</td>
+                                    <td>x //= 2</td>
+                                </tr>
+                                <tr>
+                                    <td>%=</td>
+                                    <td>Módulo</td>
+                                    <td>x %= 2</td>
+                                </tr>
+                                <tr>
+                                    <td>**=</td>
+                                    <td>Potencia</td>
+                                    <td>x **= 2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>x = 5
+x += 2  # x ahora vale 7
+x *= 3  # x ahora vale 21
+print("Resultado final:", x)</code></pre>
+
+                    <h4>4️⃣ Operadores Combinados</h4>
+                    <p>Puedes combinar operadores aritméticos y de comparación.</p>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>a = 10
+b = 5
+c = 3
+
+resultado = (a + b) > (c * 4)
+print(resultado)  # True → (15 > 12)</code></pre>
+
+                    <h4>5️⃣ Operadores Lógicos</h4>
+                    <p>Se usan para combinar condiciones. Devuelven <b>True</b> o <b>False</b>.</p>
+                    <div class="table-responsive">
+                        <table class="operators-table">
+                            <thead>
+                                <tr>
+                                    <th>Operador</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>and</td>
+                                    <td>Verdadero si ambas son verdaderas</td>
+                                    <td>True and True → True</td>
+                                </tr>
+                                <tr>
+                                    <td>or</td>
+                                    <td>Verdadero si al menos una lo es</td>
+                                    <td>True or False → True</td>
+                                </tr>
+                                <tr>
+                                    <td>not</td>
+                                    <td>Invierte el valor lógico</td>
+                                    <td>not True → False</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="toggle-btn">Ver ejemplo</button>
+                    <pre class="code-example"><code>edad = 25
+es_estudiante = True
+
+print(edad > 18 and es_estudiante)  # True
+print(edad < 18 or es_estudiante)   # True
+print(not(edad > 30))               # True</code></pre>
+                </div>
+            </div>
+        </section>
+        <section class="section ejercicios-section" id="ejercicios-casa">
+            <div class="section-card dark-card">
+                <h2>Ejercicios de práctica</h2>
+                <p>Resuelve los siguientes ejercicios para practicar lo aprendido sobre entrada/salida de datos y
+                    operadores en Python, aplicados a contextos reales:</p>
+                <ol class="exercise-list">
+                    <li>Solicita el nombre de un estudiante y su nota final. Muestra si aprobó el curso (nota ≥ 3.0).
+                    </li>
+                    <li>Pide el salario base de un empleado y calcula su salario total con un bono del 15%.</li>
+                    <li>Solicita la cantidad de asistentes a una conferencia y calcula cuántos asientos quedan libres en
+                        un auditorio de 120 personas.</li>
+                    <li>Pide el nombre de una empresa y el año de fundación, luego muestra cuántos años lleva en
+                        funcionamiento.</li>
+                    <li>Solicita la cantidad de productos vendidos y el precio unitario, luego muestra el total de
+                        ventas.</li>
+                    <li>Pide la edad de un usuario y muestra si puede acceder a un sistema restringido para mayores de
+                        21 años.</li>
+                    <li>Solicita el nombre de una universidad y el número de carreras que ofrece, luego muestra un
+                        mensaje personalizado.</li>
+                    <li>Pide el número de estudiantes en tres cursos y muestra el promedio de estudiantes por curso.
+                    </li>
+                    <li>Solicita el valor de una factura y calcula el valor con IVA (19%).</li>
+                    <li>Pide el nombre de un profesor y la cantidad de clases dictadas, luego muestra un mensaje de
+                        reconocimiento.</li>
+                    <li>Solicita el puntaje de dos exámenes y muestra si el estudiante mejoró, empeoró o mantuvo su
+                        rendimiento.</li>
+                    <li>Pide el número de empleados de dos sucursales y muestra cuál tiene más personal.</li>
+                    <li>Solicita el presupuesto anual de una organización y calcula cuánto puede gastar mensualmente.
+                    </li>
+                    <li>Pide el nombre de un proyecto y los días estimados de duración, luego muestra cuántas semanas
+                        tomará (redondeando hacia arriba).</li>
+                    <li>Solicita el número de libros prestados y el número de libros devueltos en una biblioteca, luego
+                        muestra cuántos libros quedan prestados.</li>
+                    <li>Pide el nombre de un cliente y el monto de su compra, luego muestra si aplica a un descuento (si
+                        la compra es mayor a $500.000).</li>
+                    <li>Solicita la cantidad de materias inscritas por un estudiante y muestra si tiene sobrecarga
+                        académica (más de 7 materias).</li>
+                    <li>Pide el número de horas trabajadas y la tarifa por hora, luego calcula el salario total.</li>
+                    <li>Solicita el nombre de una ciudad y la temperatura actual, luego muestra si hace frío (≤18°C),
+                        calor (≥30°C) o clima templado.</li>
+                    <li>Pide el número de participantes en un evento y muestra si se superó el cupo máximo de 100
+                        personas.</li>
+                </ol>
+                <p>¡Intenta resolverlos todos y prueba tus soluciones en Python!</p>
+            </div>
+        </section>
+        <section class="section ejercicios-clase2-section" id="ejercicios-clase">
+            <div class="section-card">
+                <h2><i class="fa-solid fa-chalkboard-user"></i> Ejercicios Clase</h2>
+
+                <div class="ejercicio-card">
+                    <h3>1️⃣ Supermercado – Total de Compra</h3>
+                    <p>Una tienda desea calcular el total de una compra de tres productos. Se deben ingresar los precios
+                        de cada uno y mostrar el total a pagar.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>2️⃣ Universidad – Promedio Ponderado</h3>
+                    <p>Un estudiante presenta tres evaluaciones con pesos del 30%, 30% y 40%. Se requiere calcular el
+                        promedio final.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>3️⃣ Clínica – Cálculo del IMC</h3>
+                    <p>Una clínica desea calcular el Índice de Masa Corporal (IMC) de un paciente, que se obtiene
+                        dividiendo el peso por la altura al cuadrado.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>4️⃣ Empresa – Porcentaje por Departamento</h3>
+                    <p>Una empresa reparte su presupuesto en tres departamentos. Se debe calcular qué porcentaje
+                        representa cada uno respecto al total.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>5️⃣ Fábrica – Comparación de Producción</h3>
+                    <p>Comparar la producción de dos turnos y determinar si el turno 1 produjo más que el turno 2.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>6️⃣ Tienda – Precio con Descuento</h3>
+                    <p>Una tienda aplica un descuento a un producto. Se debe calcular el precio final después del
+                        descuento aplicado.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>7️⃣ ONG – Comparación de Donaciones</h3>
+                    <p>Una ONG desea comparar las donaciones recibidas por parte de dos empresas y determinar si una fue
+                        mayor o si ambas fueron iguales.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>8️⃣ Evaluación de PC – Requisitos Técnicos</h3>
+                    <p>Verificar si un computador cumple con los requisitos mínimos: al menos 8 GB de RAM y 256 GB de
+                        almacenamiento SSD.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>9️⃣ Proveedor de Internet – Velocidad Promedio</h3>
+                    <p>Un proveedor de internet mide la velocidad durante tres días consecutivos. Se debe calcular el
+                        promedio de velocidad registrado.</p>
+                </div>
+                <div class="ejercicio-card">
+                    <h3>🔟 Empresa – Cálculo de ROI</h3>
+                    <p>Una empresa desea calcular el Retorno sobre la Inversión (ROI) y verificar si la inversión fue
+                        rentable (mayor a 1).</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://www.devseniorcode.com" target="_blank" class="footer-link">
+                <i class="fa-solid fa-globe"></i> devseniorcode.com
+            </a>
+            <span class="footer-divider">|</span>
+            <span class="footer-author">Ing. Johan Manuel Gordillo Mesa, Senior Software Developer</span>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -22,3 +22,13 @@ print(f"MODULO: {modulo}")
 print(f"DIVISION ENTERA: {division_entera}")
 '''
 
+#operadores convinados
+
+x = 10 # asignacion 
+x += 5
+x -= 2
+x *= 2
+x /= 2
+
+
+print(x)
