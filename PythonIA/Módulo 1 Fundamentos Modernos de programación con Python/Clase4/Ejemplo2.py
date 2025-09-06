@@ -3,8 +3,8 @@ def validarPass():
     intentos = 0
     
     while intentos < 3:
-        entrad = input("Ingrese el password: ")
-        if entrad == password:
+        entrada = input("Ingrese el password: ")
+        if entrada == password:
             print("Bienvenido al Home de Dev Senior")
             return 
         else:
