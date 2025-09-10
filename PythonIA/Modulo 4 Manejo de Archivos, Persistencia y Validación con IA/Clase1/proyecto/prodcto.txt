@@ -1,0 +1,2 @@
+ID#Nombre#Precio#Stock
+AUTO_INCREMENT=2
