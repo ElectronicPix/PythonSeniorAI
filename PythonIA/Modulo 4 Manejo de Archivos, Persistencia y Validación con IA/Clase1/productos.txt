@@ -1,0 +1,4 @@
+ID#Nombre#Precio#Stock
+1#Manzana#1500#20
+2#Leche#3000#15
+AUTO_INCCREMENT=2
