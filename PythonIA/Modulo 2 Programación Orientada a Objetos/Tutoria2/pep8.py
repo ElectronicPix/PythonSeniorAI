@@ -4,11 +4,11 @@ import datetime
 
 # Se deja una línea en blanco para separar los grupos
 # 2. Módulos de terceros (instalados con pip)
-#import requests
+# import requests
 
 # Se deja una línea en blanco para separar los grupos
 # 3. Tus propios módulos locales (archivos .py del mismo proyecto)
-#from mi_proyecto import utils
+# from mi_proyecto import utils
 
 # mi_modulo_de_ejemplo_pep8.py
 
@@ -21,6 +21,7 @@ VELOCIDAD_DE_LA_LUZ = 299792458
 
 # --- 2. Funciones y Clases ---
 
+
 # Regla: No usar espacios alrededor del signo = al definir argumentos
 # con valores por defecto. Se escribe `formato="pdf"`, no `formato = "pdf"`.
 def crear_reporte(datos, formato="pdf", es_urgente=False):
@@ -28,7 +29,7 @@ def crear_reporte(datos, formato="pdf", es_urgente=False):
     Esta función demuestra el uso correcto de espacios en los argumentos.
     """
     print(f"Generando reporte con formato {formato}...")
-    
+
     # Regla: Espacio alrededor de operadores lógicos (if) y de comparación (==).
     if es_urgente == True:
         print("El reporte es URGENTE.")
@@ -39,6 +40,7 @@ class CalculadoraGeometrica:
     """
     Una clase de ejemplo para demostrar las convenciones de estilo.
     """
+
     def __init__(self, radio):
         self._radio_privado = radio
 
@@ -48,8 +50,9 @@ class CalculadoraGeometrica:
         """
         # Regla: No poner espacios después de un paréntesis de apertura
         # o antes de uno de cierre: (self._radio_privado ** 2)
-        area_del_circulo = MI_CONSTANTE_PI * (self._radio_privado ** 2)
+        area_del_circulo = MI_CONSTANTE_PI * (self._radio_privado**2)
         return area_del_circulo
+
 
 # --- 3. Longitud de Línea (límite de 79 caracteres) ---
 
@@ -64,24 +67,21 @@ mensaje_largo_bienvenida = (
 
 # --- 4. Ejecución del Código ---
 if __name__ == "__main__":
-    
+
     # Llamada a la función usando un argumento por palabra clave (con espacios)
     crear_reporte(["dato1", "dato2"], es_urgente=True)
-    
-    print("-" * 20) # Separador visual
-    
+
+    print("-" * 20)  # Separador visual
+
     mi_calculadora = CalculadoraGeometrica(radio=10)
     resultado_area = mi_calculadora.calcular_area_circulo()
 
     print(f"El área del círculo con radio 10 es: {resultado_area}")
-    
+
     print("-" * 20)
     print(mensaje_largo_bienvenida)
-    
-    
-    
-    
-    
+
+
 # -*- coding: utf-8 -*-
 
 """
@@ -95,7 +95,7 @@ Describe el propósito del archivo: demostrar las buenas prácticas de PEP8.
 def calcular_area(radio):
     """Calcula el área de un círculo."""
     pi = 3.14159
-    return pi * (radio ** 2)
+    return pi * (radio**2)
 
 
 # Se dejan dos líneas en blanco antes de la definición de una clase.
@@ -108,6 +108,7 @@ class Mascota:
     Atributos:
         nombre (str): El nombre de la mascota.
     """
+
     def __init__(self, nombre):
         # 1. Indentación: Este bloque tiene 4 espacios.
         self.nombre = nombre
