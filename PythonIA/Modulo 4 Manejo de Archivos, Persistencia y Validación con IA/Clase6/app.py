@@ -27,10 +27,11 @@ def leer_datos():
 def crear_clientes(nombre,correo,edad):
     cursor.execute(f"INSERT INTO clientes(nombre, correo, edad) values('{nombre}', '{correo}', {edad});")
     conexion.commit()
-    print("Cliente creado")
+    print("Cliente creado con exito!")
     
 
-crear_clientes("Luz", "luz@gmail.com", 30)
+crear_clientes("Fredy", "fredy@gmail.com", 34)
+leer_datos()
 
 # Recomendable cerrar los procesos
 conexion.close()

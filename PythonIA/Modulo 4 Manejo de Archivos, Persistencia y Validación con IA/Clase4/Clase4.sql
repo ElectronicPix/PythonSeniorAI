@@ -13,7 +13,7 @@ CREATE TABLE clientes(
 
 -- Insertar datos
 insert into clientes (nombre, correo, edad)
-values('Andres', 'andres@gmail.com', 30);
+values('Joel', 'joel@gmail.com', 40);
 
 -- Consultar la información 
 select nombre from clientes;
