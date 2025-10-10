@@ -30,7 +30,7 @@ def crear_clientes(nombre,correo,edad):
     print("Cliente creado con exito!")
     
 
-crear_clientes("Fredy", "fredy@gmail.com", 34)
+crear_clientes("Elvis", "elvis@gmail.com", 29)
 leer_datos()
 
 # Recomendable cerrar los procesos

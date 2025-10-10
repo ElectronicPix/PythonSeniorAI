@@ -1,9 +1,11 @@
 '''Patrones de Diseños'''
 # Resetas 
 
-# Patrones de creación
+# Patrones de creación: Crear código
 # Patrones de estructura: Trabajar sobre el
 # Adapter: Adactar a cualquier situación
+# Comportamiento
+# Creacional
 
 class MotorViejo: # Código viejo
     
@@ -15,7 +17,7 @@ class MotorNuevo:
     def encendido(self):
         return "Motor encendido"
     
-class AdaptadorMotor:
+class AdaptadorMotor: # clase qcreada para adaptar motor
     
     def __init__(self, motor):
         self.motor = motor
