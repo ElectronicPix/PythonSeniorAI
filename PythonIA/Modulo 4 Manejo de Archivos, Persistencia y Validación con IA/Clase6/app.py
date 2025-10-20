@@ -23,14 +23,14 @@ def leer_datos():
 
     for fila in resultado:
         print(fila)
-   
+
 def crear_clientes(nombre,correo,edad):
     cursor.execute(f"INSERT INTO clientes(nombre, correo, edad) values('{nombre}', '{correo}', {edad});")
     conexion.commit()
     print("Cliente creado con exito!")
     
 
-crear_clientes("Elvis", "elvis@gmail.com", 29)
+crear_clientes("Lorena", "lorena@gmail.com", 18)
 leer_datos()
 
 # Recomendable cerrar los procesos
