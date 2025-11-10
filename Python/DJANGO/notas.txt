@@ -1,0 +1,17 @@
+Django - framework para python 
+
+Escalable y seguro para desarrollo web rapido
+
+backend, modelo de plantilla y vista (MVC)
+
+APIS, conectar backend con frontend
+
+# Instalacion de Django
+
+conda install -c anaconda django
+
+# Iniciar proyecto
+django-admin startproject mi_proyecto (nombre)
+
+# Iniciar magame.py
+python magame.py startapp core (Nombre)

@@ -1,4 +1,5 @@
 
+
 create table if not exists autor(
 	id UUID primary key default uuid_generate_v4(), -- bigserial
 	nombre varchar(150) not null, 
