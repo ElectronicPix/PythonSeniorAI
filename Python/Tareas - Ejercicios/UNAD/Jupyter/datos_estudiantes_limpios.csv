@@ -1,0 +1,8 @@
+ID_Estudiante,Nombre,Edad,Promedio,Semestre,Categoria_Notas,Promedio_Normalizado
+101,Ana,20,4.5,Sem-1,Alto,0.8333333333333333
+102,Luis,22,3.8,Sem-2,Básico,0.5416666666666665
+103,Carlos,19,3.8000000000000003,Sem-1,Básico,0.5416666666666667
+104,Maria,21,4.0,Sem-2,Alto,0.625
+108,Sofia,20,4.9,Sem-1,Alto,1.0
+109,Pedro,24,2.5,Sem-1,Básico,0.0
+110,Lucia,21,3.0,Sem-1,Básico,0.20833333333333348

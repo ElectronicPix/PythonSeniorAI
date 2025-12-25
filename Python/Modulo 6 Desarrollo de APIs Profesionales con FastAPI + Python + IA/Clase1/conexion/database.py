@@ -7,7 +7,7 @@ def get_connection():
         database = "school",
         user = "postgres",
         password = "admin",
-        port = "5432"
+        port = "5432",
         cursor_factory= RealDictCursor # Para obtener diccionarios en lugar de tuplas
     )
     return conn
