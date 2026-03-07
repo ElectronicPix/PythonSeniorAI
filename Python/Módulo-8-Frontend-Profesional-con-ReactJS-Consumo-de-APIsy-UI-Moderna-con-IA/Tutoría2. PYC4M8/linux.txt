@@ -1,0 +1,1 @@
+apt install cowsay | dnf install cowsay| pacman -S cowsay

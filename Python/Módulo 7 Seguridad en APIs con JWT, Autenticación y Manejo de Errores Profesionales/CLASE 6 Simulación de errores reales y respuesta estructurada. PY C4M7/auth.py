@@ -35,8 +35,10 @@ def verify_token(token: str):
 
 def get_current_user(
     credemtials: HTTPAuthorizationCredentials = Depends(security)
+    credentials: HTTPAuthorizationCredentials = Depends(security)
 ):
     token = credemtials.credentials
+    token = credentials.credentials
     return verify_token(token)
 
 def require_rol(role: str):

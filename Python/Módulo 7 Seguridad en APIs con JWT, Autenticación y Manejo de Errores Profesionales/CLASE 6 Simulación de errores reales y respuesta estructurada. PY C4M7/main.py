@@ -62,3 +62,51 @@ def startup():
         db.commit()
     db.close()
     
+@app.post("/login")
+
+def login(
+    username: str, 
+    password: str, 
+    db: session = Depends(get_db)
+):
+    
+    user = db.query(User).filter(User.username == username).first()
+    
+    if not user or not very_password(password, user.password):
+        raise HTTPException(
+            status_code=401, 
+            detail= "Credenciales incorrectas"
+        )
+        
+    token = create_access_token(
+        data= {"sub": user.username, "role" : user.role}
+    )
+    
+    return{
+        "access_token": token, 
+        "token_type": "bearer"
+    }
+    
+@app.get("/admin")
+def admin_dashboard(user=Depends(require_rol("admin"))):
+    return{
+        "menssage":"" 
+    }
+    
+    
+
+# Link git: https://github.com/mariajosevillalba/SEMANA-3-MODULO-7
+
+
+#instalacion de librerias
+#Sola
+#pip install pandas , cualquier libreria
+#Varias
+#pip install pandas numpy fastapi , pueden ser varias separadas por espacio
+#puntualmente la libreria
+#pip install (libreria)
+#con el requirements.txt
+#pip install -r requirements.txt
+
+
+#drawsql

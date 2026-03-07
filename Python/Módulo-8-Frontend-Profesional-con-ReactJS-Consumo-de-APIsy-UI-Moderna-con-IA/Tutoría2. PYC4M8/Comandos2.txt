@@ -1,0 +1,14 @@
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
+
+echo "node_modules/
+.DS_Store
+dist/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local" > .gitignore
+
+
+npm create vite@latest mi-react-app -- --template react
